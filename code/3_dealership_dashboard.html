@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Auto-Tech Pro | Dealership Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#5e5e5e",
+                    "on-surface-variant": "#A4AAAE",
+                    "on-surface": "#FFFFFF",
+                    "primary": "#00A19B",
+                    "on-error-container": "#FFFFFF",
+                    "surface": "#000000",
+                    "primary-fixed": "#FFFFFF",
+                    "surface-dim": "#000000",
+                    "background": "#000000",
+                    "on-primary": "#000000",
+                    "primary-container": "#00A19B",
+                    "on-background": "#FFFFFF",
+                    "tertiary-container": "#111111",
+                    "surface-container-highest": "#111111",
+                    "tertiary-fixed": "#A4AAAE",
+                    "surface-container-lowest": "#000000",
+                    "on-primary-fixed-variant": "#00A19B",
+                    "on-primary-fixed": "#000000",
+                    "secondary-container": "#111111",
+                    "surface-variant": "#111111",
+                    "tertiary-fixed-dim": "#A4AAAE",
+                    "surface-container-high": "#111111",
+                    "on-tertiary-fixed-variant": "#A4AAAE",
+                    "on-secondary-fixed": "#FFFFFF",
+                    "outline": "#A4AAAE",
+                    "tertiary": "#A4AAAE",
+                    "surface-container": "#111111",
+                    "secondary": "#A4AAAE",
+                    "on-tertiary-fixed": "#FFFFFF",
+                    "on-primary-container": "#FFFFFF",
+                    "primary-fixed-dim": "#00A19B",
+                    "on-secondary-fixed-variant": "#A4AAAE",
+                    "on-secondary-container": "#FFFFFF",
+                    "inverse-on-surface": "#000000",
+                    "on-tertiary": "#FFFFFF",
+                    "on-secondary": "#FFFFFF",
+                    "error-container": "#EB0000",
+                    "outline-variant": "#A4AAAE",
+                    "surface-bright": "#111111",
+                    "inverse-surface": "#FFFFFF",
+                    "on-tertiary-container": "#A4AAAE",
+                    "secondary-fixed": "#A4AAAE",
+                    "surface-tint": "#00A19B",
+                    "on-error": "#FFFFFF",
+                    "error": "#EB0000",
+                    "surface-container-low": "#111111",
+                    "secondary-fixed-dim": "#A4AAAE"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "unit": "4px",
+                    "gutter": "16px",
+                    "container-max": "1280px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "margin": "20px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "status-badge": ["JetBrains Mono"],
+                    "body-md": ["Geist"],
+                    "label-mono": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "status-badge": ["11px", {"lineHeight": "12px", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for technical look */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #00A19B; border-radius: 2px; }
+        
+        .diagnostic-card {
+            border-left: 4px solid transparent;
+            transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.4s ease, translate 0.4s ease;
+            opacity: 0;
+            translate: 0 20px;
+        }
+        .diagnostic-card.animate-in {
+            opacity: 1;
+            translate: 0 0;
+        }
+        .diagnostic-card:active {
+            transform: scale(0.98);
+        }
+        .status-created { border-left-color: #A4AAAE; }
+        .status-inprogress { border-left-color: #00A19B; }
+        
+        /* Pulse Animation */
+        @keyframes priority-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(235, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(235, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(235, 0, 0, 0); }
+        }
+        .glow-pulse {
+            animation: priority-pulse 2s infinite;
+        }
+
+        /* FAB Rotation */
+        @keyframes fab-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .fab-entrance {
+            animation: fab-rotate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Search Shimmer */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .search-shimmer {
+            background: linear-gradient(90deg, #111111 0%, #1a1a1a 50%, #111111 100%);
+            background-size: 200% 100%;
+            animation: shimmer 4s infinite linear;
+        }
+
+        /* Nav Lift */
+        .nav-item-active {
+            transform: translateY(-4px);
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .zebra-row:nth-child(even) {
+            background-color: rgba(17, 17, 17, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-margin h-16">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">precision_manufacturing</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-primary">AUTO-TECH PRO</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 transition-transform">
+                notifications
+            </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an automotive service manager in a high-tech workshop setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmwBrkSTjz8x04tFrhMw9RVHtRUP1pMFicWVy5ADVgfvbvZqQ3PFNf4ChOQKn9yLja4SSwiqVVjnlco45m1SX5Qxn_REpKtRNgTI4vSK7rPR1A7-rK5O28FaHRUQdVFrnQ7LRovzqM5AXL4h4hLmCdeMK5saW2M9jns_6IhHc_P6Dst29OVzZj6GMQ1kBu0atNHb8RuEmHFQ3W9kGkiETlXyjpJkOot3xZaefsR1UhBgPhTNiOy-R_RlQZRKhm4ejfTBSQv9uKL74y"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-20 pb-24 px-margin min-h-screen">
+<!-- Header Section with Search/Filter -->
+<section class="mb-lg">
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Active Jobs</h2>
+<span class="font-label-mono text-label-mono text-secondary mb-1">TOTAL: 128 UNITS</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="w-2/3 h-full bg-primary"></div>
+</div>
+</div>
+</section>
+<!-- Search & Quick Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-sm mb-lg">
+<div class="search-shimmer p-md border border-outline-variant rounded-lg flex items-center gap-sm md:col-span-2">
+<span class="material-symbols-outlined text-secondary">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-mono w-full text-on-surface placeholder:text-outline" placeholder="SEARCH BY VIN, MODEL, OR CASE #" type="text"/>
+</div>
+<div class="bg-surface-container p-md border border-outline-variant rounded-lg flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-secondary uppercase">Priority</span>
+<span class="bg-error-container text-on-error-container px-2 py-0.5 font-status-badge text-status-badge rounded-sm glow-pulse">12 HIGH</span>
+</div>
+</div>
+<!-- Job List (Diagnostic Cards) -->
+<div class="flex flex-col gap-sm" id="job-list">
+<!-- Job Card 1 -->
+<div class="diagnostic-card status-inprogress bg-surface-container-low p-md border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-mono text-label-mono text-secondary mb-1">CASE-99284-AX</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">2022 Ford F-150</h3>
+</div>
+<span class="bg-primary text-on-primary px-sm py-1 font-status-badge text-status-badge rounded-sm uppercase">InProgress</span>
+</div>
+<p class="text-on-surface-variant mb-md border-l-2 border-surface-container-highest pl-md italic">
+                    "Consistent knocking sound coming from engine block during cold start. Performance degradation reported at low speeds."
+                </p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">calendar_today</span>
+<span class="font-label-mono text-label-mono text-secondary">OCT 24, 2023</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-surface bg-primary text-[10px] font-bold text-on-primary flex items-center justify-center">MK</div>
+<div class="w-6 h-6 rounded-full border border-surface bg-secondary-container text-[10px] font-bold text-on-surface flex items-center justify-center">JD</div>
+</div>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="diagnostic-card status-created bg-surface-container-low p-md border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-mono text-label-mono text-secondary mb-1">CASE-99285-BY</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">2023 Tesla Model 3</h3>
+</div>
+<span class="border border-outline text-on-surface px-sm py-1 font-status-badge text-status-badge rounded-sm uppercase">Created</span>
+</div>
+<p class="text-on-surface-variant mb-md border-l-2 border-surface-container-highest pl-md italic">
+                    "Software mismatch in HV battery management system. Range fluctuations noted after firmware v11.4 update."
+                </p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">calendar_today</span>
+<span class="font-label-mono text-label-mono text-secondary">OCT 25, 2023</span>
+</div>
+<span class="material-symbols-outlined text-secondary hover:text-primary transition-colors">more_vert</span>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="diagnostic-card status-inprogress bg-surface-container-low p-md border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-mono text-label-mono text-secondary mb-1">CASE-99286-CZ</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">2021 BMW X5</h3>
+</div>
+<span class="bg-primary text-on-primary px-sm py-1 font-status-badge text-status-badge rounded-sm uppercase">InProgress</span>
+</div>
+<p class="text-on-surface-variant mb-md border-l-2 border-surface-container-highest pl-md italic">
+                    "Brake squeal at high operating temperatures. Brake pad wear sensors showing inconsistent readings."
+                </p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">calendar_today</span>
+<span class="font-label-mono text-label-mono text-secondary">OCT 25, 2023</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-mono text-[10px] text-error glow-pulse px-1 font-bold">PRIORITY HIGH</span>
+</div>
+</div>
+</div>
+<!-- Job Card 4 -->
+<div class="diagnostic-card status-created bg-surface-container-low p-md border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<p class="font-label-mono text-label-mono text-secondary mb-1">CASE-99287-DW</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">2024 Rivian R1T</h3>
+</div>
+<span class="border border-outline text-on-surface px-sm py-1 font-status-badge text-status-badge rounded-sm uppercase">Created</span>
+</div>
+<p class="text-on-surface-variant mb-md border-l-2 border-surface-container-highest pl-md italic">
+                    "Air suspension calibration failure. Vehicle leaning toward passenger side when parked in 'Standard' height mode."
+                </p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">calendar_today</span>
+<span class="font-label-mono text-label-mono text-secondary">OCT 26, 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Industrial Background Asset -->
+<div class="mt-xl opacity-40 pointer-events-none">
+<div class="flex flex-col gap-xs font-label-mono text-[10px] text-secondary">
+<p>&gt; SYSTEM STATUS: OPTIMAL</p>
+<p>&gt; UPTIME: 142:12:04</p>
+<p>&gt; DATA REPLICATION: SYNCHRONIZED</p>
+<div class="w-full h-[1px] bg-outline-variant"></div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-margin w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform z-50 fab-entrance" id="main-fab">
+<span class="material-symbols-outlined" style="font-size: 32px;">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container border-t border-outline-variant flex justify-around items-center h-20 px-sm">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:inset-shadow duration-100 nav-item-active" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-mono text-label-mono">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:inset-shadow duration-100" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-mono text-label-mono">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors active:inset-shadow duration-100" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-mono text-label-mono">Profile</span>
+</a>
+</nav>
+<script>
+        // Entrance animation for job cards
+        window.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.diagnostic-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('animate-in');
+                }, index * 100);
+            });
+        });
+
+        // FAB Rotation on scroll
+        let lastScroll = 0;
+        const fab = document.getElementById('main-fab');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const rotation = currentScroll / 2;
+            fab.style.transform = `rotate(${rotation}deg)`;
+        });
+
+        // Simple micro-interaction for job cards
+        document.querySelectorAll('.diagnostic-card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.borderColor = '#00A19B';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.borderColor = '';
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input');
+        const searchContainer = searchInput.parentElement;
+        searchInput.addEventListener('focus', () => {
+            searchContainer.style.borderColor = '#00A19B';
+            searchContainer.style.boxShadow = '0 0 8px rgba(0, 161, 155, 0.2)';
+            searchContainer.classList.remove('search-shimmer');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchContainer.style.borderColor = '';
+            searchContainer.style.boxShadow = '';
+            searchContainer.classList.add('search-shimmer');
+        });
+
+        // Nav selection logic
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(i => {
+                    i.classList.remove('nav-item-active', 'bg-primary', 'text-on-primary', 'rounded-full', 'px-4', 'py-1');
+                    i.classList.add('text-secondary');
+                });
+                item.classList.add('nav-item-active', 'bg-primary', 'text-on-primary', 'rounded-full', 'px-4', 'py-1');
+                item.classList.remove('text-secondary');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AUTO-TECH PRO | Job Details &amp; Log</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-line {
+            width: 2px;
+            background: repeating-linear-gradient(to bottom, #A4AAAE 0, #A4AAAE 4px, transparent 4px, transparent 8px);
+        }
+        .glass-card {
+            background: #111111;
+            border: 1px solid #A4AAAE;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A19B", // Electric Tech Cyan
+                        "on-primary": "#FFFFFF",
+                        "primary-container": "#00A19B",
+                        "on-primary-container": "#FFFFFF",
+                        "secondary": "#A4AAAE", // Metallic Arrowsilver
+                        "error": "#EB0000", // AMG Dynamic Red
+                        "background": "#000000", // Obsidian Jet Black
+                        "on-background": "#FFFFFF", // Polar White
+                        "surface": "#111111", // Midnight Matte Slate
+                        "on-surface": "#FFFFFF",
+                        "surface-variant": "#111111",
+                        "on-surface-variant": "#A4AAAE",
+                        "outline": "#A4AAAE",
+                        "outline-variant": "#333333",
+                        "surface-container-high": "#1A1A1A",
+                        "surface-container-highest": "#222222",
+                        "surface-container-low": "#080808",
+                        "primary-fixed": "#00A19B",
+                        "on-primary-fixed": "#FFFFFF"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        gutter: "16px",
+                        md: "16px",
+                        lg: "24px",
+                        base: "4px",
+                        sm: "8px",
+                        xs: "4px",
+                        xl: "32px",
+                        margin: "20px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "status-badge": ["JetBrains Mono"],
+                        "body-md": ["Geist"],
+                        "label-mono": ["JetBrains Mono"],
+                        headline: ["Geist"],
+                        display: ["Geist"],
+                        body: ["Geist"],
+                        label: ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "headline-md": ["20px", {lineHeight: "28px", fontWeight: "600"}],
+                        "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                        "headline-lg-mobile": ["24px", {lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700"}],
+                        "status-badge": ["11px", {lineHeight: "12px", fontWeight: "800"}],
+                        "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                        "label-mono": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant flex justify-between items-center px-margin h-16">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">AUTO-TECH PRO</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full">download</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full">notifications</button>
+</div>
+</header>
+<main class="pt-24 px-margin max-w-5xl mx-auto space-y-lg">
+<!-- Action Bar / Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div>
+<span class="font-label-mono text-label-mono text-secondary mb-1 block">CASE #ATH-9921-X</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Vehicle Diagnostic Overview</h2>
+</div>
+<div class="flex items-center gap-sm">
+<button class="bg-surface-container-high text-on-surface-variant cursor-not-allowed opacity-50 font-bold py-2 px-md rounded flex items-center gap-2 transition-transform">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                    Mark as Resolved
+                </button>
+</div>
+</div>
+<!-- Main Details Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Car Info & Consultant -->
+<div class="md:col-span-8 space-y-gutter">
+<div class="glass-card p-md rounded-lg">
+<div class="flex justify-between items-start border-b border-outline-variant pb-md mb-md">
+<div>
+<h3 class="font-label-mono text-label-mono text-secondary mb-1">VEHICLE SPECS</h3>
+<p class="font-headline-md text-headline-md">2023 Performance SUV (M-Series)</p>
+<p class="text-on-surface-variant">VIN: 1HGCM82635A000XXX</p>
+</div>
+<div class="bg-primary/20 px-sm py-1 border-l-2 border-primary">
+<span class="font-status-badge text-status-badge text-primary">IN ANALYSIS</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<div class="space-y-1">
+<span class="font-label-mono text-label-mono text-secondary">SYSTEM</span>
+<p class="font-body-md">Engine Management</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-mono text-label-mono text-secondary">REPORTED BY</span>
+<p class="font-body-md">Grand City Dealership</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-mono text-label-mono text-secondary">MILEAGE</span>
+<p class="font-body-md">12,450 km</p>
+</div>
+</div>
+<div class="mt-lg p-sm bg-surface-container-low border border-outline-variant rounded flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-primary">
+<img class="w-full h-full object-cover" data-alt="Mike Tech professional portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkPKOFkPrg_LJsPuJx5cwKGVAUOL_mA4FmO_DjO0srGcIHyor3HWqpN9_r8VCMnFGCgMs2F7t79WrR6HB2Vk6dHstXdK2y_2JUti37C1MZArFl7ONiFOQFHF82cp0l8NOTXGWlRmrvHK9bv4FTljR2qz1Tsud_3gPojQAiGWwv3iC-Bg8wmzJxPtvG61IESeOCzzijnJnrR0svf1zUlrNFCSswESxJQL3D8-CLjNrkeKtmYOSU3Ew_5UiEyu54Re1EXTAdaU4oW0Lh"/>
+</div>
+<div>
+<span class="font-label-mono text-label-mono text-secondary block">ASSIGNED CONSULTANT</span>
+<p class="font-body-md font-semibold text-primary">Mike Tech</p>
+<p class="text-[12px] text-on-surface-variant">Senior Diagnostic Specialist</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-secondary hover:text-primary transition-colors">chat_bubble</button>
+</div>
+</div>
+<!-- Problem Description -->
+<div class="glass-card p-md rounded-lg">
+<h3 class="font-label-mono text-label-mono text-secondary mb-md">PROBLEM DESCRIPTION</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Customer reports intermittent loss of power during acceleration and "Check Engine" light illumination. Initial dealership scan revealed DTC P0299 (Turbocharger Underboost). Visual inspection of intake hoses appears normal. Requesting advanced log analysis and diagnostic path.
+                    </p>
+</div>
+</div>
+<!-- Right Column: Media Thumbnails -->
+<div class="md:col-span-4 space-y-gutter">
+<div class="glass-card p-md rounded-lg h-full">
+<h3 class="font-label-mono text-label-mono text-secondary mb-md">UPLOADED MEDIA (4)</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden relative group cursor-pointer border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUn7cN3dgrk5XddhBzlSAgYxFMvUs1hdlBn5A_Ix9G__EcUpCTInI6sMy2ZFfI7aZ3RUBlV5HknRUbh46mad80nVOFkBfgGRPHhmBWDjcbIQeTpsl9cvMK8XcJ0ULGF04AAmUprgrE9e92-wDuGSGpDqNv0wv-MbVLbS2Joc3H8u7SlcuqKK0ox99EcqBWePsjQbUOrthiahrjb0xVydb04ldOo5UFPaOmsQuBvkVWZaJmbQLwr5P9bf06RpjCoQfMZOpdDen0HP8q')"></div>
+</div>
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden relative group cursor-pointer border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1hd1Ygyr7ptdOw-7WiK7jaOZtftVaPCI0pipDRWFddH2nGEQw5p34PlrcvsfMcB71B7ga_GU_X2u1YiM_Q8T-qLShW7K-i2mdd3qExHq_k-FB9LSGKoZSAhvjWJeTek7qWNuDBGdGP9Rypr8pqGqcN5wcov1sBQVQy76512cX63Uja4WCR3cb8Dsc6-Rnab1D1Svfrm7WwY5QUO7CO8FmkvL0jue9cjkWS1fj8EJeLOCAkMgjgxmrKsFIsqe8NcWuX0O_t8zwbqO0')"></div>
+</div>
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden relative group cursor-pointer border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSVKbjAPToBZtdvre67cdL1aM67DUBBulGe1nqeQyn0yfOQxW4S1aMyk-Mi3ihTSX-sC7ZCHsyfmVQNeTBseR3cQjqmC9SmnZKBwJcigCmHnKA9Z04UcO73Wm4-ROoDvXjFHLYFzrj7JH8K1OiS9n4NBuXvOE2zFFLWoCx3xnsmS6Qn0VgKVyOPiwXg2hBFOcKvyUIuHDe0z10VKiXT-b_DV4ospnjhFBAyzfJIA1Z_lQouMcCHHK_uoYPiuOP6vY4jfwZ6QSMYMmZ')"></div>
+</div>
+<div class="aspect-square bg-surface-container-high rounded overflow-hidden relative group border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">add_a_photo</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Job Log Section -->
+<section class="glass-card rounded-lg overflow-hidden mb-xl">
+<div class="bg-surface-container-high px-md py-sm border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-label-mono text-label-mono text-on-surface">JOB LOG &amp; ACTIVITY</h3>
+<span class="font-label-mono text-label-mono text-on-surface-variant">LAST UPDATED: 14:32</span>
+</div>
+<div class="p-md relative">
+<!-- Vertical Timeline Line -->
+<div class="absolute left-[31px] top-md bottom-md timeline-line"></div>
+<div class="space-y-lg relative">
+<!-- Resolution Provided (Locked/Current) -->
+<div class="flex gap-md">
+<div class="relative z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+</div>
+<div class="flex-1 pb-sm border-b border-outline-variant">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md font-bold text-on-surface">Resolution Provided</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Today, 14:15</span>
+</div>
+<p class="text-on-surface-variant mb-md">Confirmed wastegate actuator failure. Recommended replacement of solenoid valve P/N 7.02256.40.0 and subsequent adaptation reset.</p>
+<!-- Bill Generation Call to Action -->
+<div class="bg-primary/10 border border-primary p-md rounded-lg flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<div>
+<p class="font-body-md font-bold text-primary">Technical Analysis Complete</p>
+<p class="text-[12px] text-on-surface-variant">Ready for final invoicing and documentation.</p>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary font-bold py-2 px-lg rounded active:scale-95 transition-all shadow-[0_0_15px_rgba(0,161,155,0.4)]">
+                                    Generate Bill
+                                </button>
+</div>
+</div>
+</div>
+<!-- Analysis Started -->
+<div class="flex gap-md">
+<div class="relative z-10 w-8 h-8 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">search</span>
+</div>
+<div class="flex-1 pb-sm border-b border-outline-variant">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md font-semibold text-on-surface">Analysis Started (Mike)</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Today, 09:30</span>
+</div>
+<p class="text-on-surface-variant italic">"Reviewing high-pressure fuel pump logs and boost pressure deviations..."</p>
+</div>
+</div>
+<!-- Consultant Assigned -->
+<div class="flex gap-md">
+<div class="relative z-10 w-8 h-8 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">person_add</span>
+</div>
+<div class="flex-1 pb-sm border-b border-outline-variant">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md font-semibold text-on-surface">Consultant Assigned</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Yesterday, 17:45</span>
+</div>
+<p class="text-on-surface-variant">System auto-allocated Mike Tech based on Performance SUV specialization.</p>
+</div>
+</div>
+<!-- Job Created -->
+<div class="flex gap-md">
+<div class="relative z-10 w-8 h-8 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">factory</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-body-md font-semibold text-on-surface">Job Created (Dealership)</h4>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Yesterday, 16:20</span>
+</div>
+<p class="text-on-surface-variant">Case opened by Service Manager John D. at Grand City Dealership.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center h-20 px-sm">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-mono text-label-mono">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-mono text-label-mono">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-mono text-label-mono">Profile</span>
+</a>
+</nav>
+<script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.disabled && !btn.classList.contains('cursor-not-allowed')) {
+                    console.log('Action triggered: ' + btn.innerText.trim());
+                }
+            });
+        });
+    </script>
+</body></html>

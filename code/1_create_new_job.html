@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Job Creation | AUTO-TECH PRO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class", 
+  theme: {
+    extend: {
+      colors: {
+        "background": "#000000", // Obsidian Jet Black
+        "surface": "#111111",    // Midnight Matte Slate
+        "surface-variant": "#1A1A1A",
+        "on-surface": "#FFFFFF", // Polar White
+        "on-background": "#FFFFFF",
+        "primary": "#00A19B",    // Electric Tech Cyan
+        "on-primary": "#000000",
+        "error": "#EB0000",      // AMG Dynamic Red
+        "outline": "#A4AAAE",    // Metallic Arrowsilver
+        "outline-variant": "#333333",
+        "surface-container": "#111111",
+        "surface-container-high": "#1A1A1A",
+        "surface-container-lowest": "#080808"
+      }, 
+      borderRadius: {
+        DEFAULT: "0rem", 
+        lg: "0rem", 
+        xl: "0rem", 
+        full: "9999px"
+      }, 
+      spacing: {
+        gutter: "16px", 
+        md: "16px", 
+        lg: "24px", 
+        base: "4px", 
+        sm: "8px", 
+        xs: "4px", 
+        xl: "32px", 
+        margin: "20px"
+      }, 
+      fontFamily: {
+        "headline-md": ["Geist"], 
+        "headline-lg": ["Geist"], 
+        "headline-lg-mobile": ["Geist"], 
+        "body-md": ["Geist"], 
+        "label-mono": ["JetBrains Mono"], 
+        headline: ["Geist"], 
+        display: ["Geist"], 
+        body: ["Geist"], 
+        label: ["JetBrains Mono"]
+      }, 
+      fontSize: {
+        "headline-md": ["20px", {lineHeight: "28px", fontWeight: "600"}], 
+        "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}], 
+        "headline-lg-mobile": ["24px", {lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700"}], 
+        "status-badge": ["11px", {lineHeight: "12px", fontWeight: "800"}], 
+        "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], 
+        "label-mono": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+      }
+    }
+  }
+};
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .form-input-focus:focus-within {
+        box-shadow: 0 0 0 1px #00A19B;
+        border-color: #00A19B;
+    }
+    .pressed-state:active {
+        transform: scale(0.98);
+        background-color: #008a85;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+      font-family: 'Geist', sans-serif;
+    }
+    input, textarea {
+        font-family: 'JetBrains Mono', monospace;
+    }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-background fixed top-0 w-full z-50 border-b border-outline h-16 flex justify-between items-center px-margin">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface uppercase">AUTO-TECH PRO</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:bg-surface-variant transition-colors p-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-margin max-w-2xl mx-auto">
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Create New Job</h2>
+<p class="text-outline font-label-mono uppercase tracking-widest text-xs mt-xs">System Status: Ready for Input</p>
+</div>
+<!-- Job Form -->
+<form class="space-y-md" id="newJobForm">
+<!-- Vehicle Identification Section -->
+<section class="bg-surface p-md border border-outline shadow-sm">
+<div class="flex items-center gap-xs mb-sm border-b border-outline-variant pb-xs">
+<span class="material-symbols-outlined text-primary text-sm">directions_car</span>
+<span class="font-label-mono text-label-mono text-primary">VEHICLE_SPECS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-mono text-label-mono text-outline">CAR MAKE</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-none px-md py-sm text-on-surface focus:border-primary focus:ring-0 focus:outline-none transition-all appearance-none">
+<option disabled="" selected="" value="">Select Make</option>
+<option value="BMW">BMW</option>
+<option value="Ford">Ford</option>
+<option value="Tesla">Tesla</option>
+<option value="Rivian">Rivian</option>
+<option value="Porsche">Porsche</option>
+<option value="Mercedes-Benz">Mercedes-Benz</option>
+<option value="Audi">Audi</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-mono text-label-mono text-outline">MODEL</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-none px-md py-sm text-on-surface focus:border-primary focus:ring-0 focus:outline-none transition-all appearance-none">
+<option disabled="" selected="" value="">Select Model</option>
+<option value="3 Series">3 Series</option>
+<option value="F-150">F-150</option>
+<option value="Model 3">Model 3</option>
+<option value="R1T">R1T</option>
+<option value="911">911</option>
+<option value="G-Class">G-Class</option>
+<option value="RS6">RS6</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-mono text-label-mono text-outline">YEAR</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-none px-md py-sm text-on-surface focus:border-primary focus:ring-0 focus:outline-none transition-all appearance-none">
+<option disabled="" selected="" value="">YYYY</option>
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-mono text-label-mono text-outline">DATE OF ENTRY</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-none px-md py-sm text-outline font-label-mono cursor-not-allowed" id="currentDate" readonly="" type="text"/>
+</div>
+</div>
+</section>
+<!-- Diagnostic Section -->
+<section class="bg-surface p-md border border-outline shadow-sm">
+<div class="flex items-center gap-xs mb-sm border-b border-outline-variant pb-xs">
+<span class="material-symbols-outlined text-primary text-sm">troubleshoot</span>
+<span class="font-label-mono text-label-mono text-primary">DIAGNOSTIC_DATA</span>
+</div>
+<div class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-mono text-label-mono text-outline">PROBLEM DESCRIPTION</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-none px-md py-sm text-on-surface focus:border-primary focus:ring-0 focus:outline-none transition-all resize-none" placeholder="Detailed technical description of the fault..." rows="4"></textarea>
+</div>
+<div class="space-y-xs">
+<label class="font-label-mono text-label-mono text-outline">SCAN REPORT FILE</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-none px-md py-sm pr-12 text-on-surface focus:border-primary focus:ring-0 focus:outline-none transition-all" placeholder="Paste scan log or select file..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline">upload_file</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Media Upload Section -->
+<section class="bg-surface p-md border border-outline shadow-sm">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary text-sm">photo_camera</span>
+<span class="font-label-mono text-label-mono text-primary uppercase">Media &amp; Documentation</span>
+</div>
+<div class="border border-dashed border-outline-variant p-xl flex flex-col items-center justify-center gap-md hover:bg-surface-variant transition-all group cursor-pointer active:inset-shadow duration-100">
+<div class="w-16 h-16 bg-surface-container-lowest flex items-center justify-center border border-outline-variant group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary transition-colors">camera</span>
+</div>
+<div class="text-center">
+<p class="font-headline-md text-on-surface">Images &amp; Video</p>
+<p class="text-label-mono text-outline mt-xs">DRAG FILES HERE OR TAP TO CAPTURE</p>
+</div>
+<div class="flex gap-sm">
+<div class="w-12 h-12 bg-surface-container-lowest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">image</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-lowest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">videocam</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-lowest border border-outline-variant flex items-center justify-center border-dashed">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Area -->
+<div class="pt-lg flex flex-col gap-md">
+<button class="w-full bg-primary text-on-primary py-lg font-headline-md uppercase tracking-wider shadow-lg flex items-center justify-center gap-sm active:scale-[0.98] transition-transform pressed-state" type="submit">
+<span class="material-symbols-outlined">send</span>
+                    Submit Job
+                </button>
+<button class="w-full border border-outline text-on-surface py-md font-label-mono uppercase tracking-widest hover:bg-surface-variant transition-colors" type="button">
+                    Save as Draft
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface fixed bottom-0 w-full z-50 border-t border-outline h-20 flex justify-around items-center px-sm">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary px-6 py-1 h-12 min-w-[80px]" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-mono text-[10px] uppercase font-bold">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-mono text-[10px] uppercase font-bold">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-mono text-[10px] uppercase font-bold">Profile</span>
+</a>
+</nav>
+<script>
+        // Set Today's Date
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('currentDate');
+            const today = new Date();
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            dateInput.value = today.toLocaleDateString('en-US', options).toUpperCase();
+        });
+
+        // Form Submission Micro-interaction
+        document.getElementById('newJobForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> PROCESSING...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> JOB RECORDED';
+                btn.style.backgroundColor = '#00A19B'; // Maintain primary cyan
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalContent;
+                    alert('Job successfully added to the queue.');
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>
