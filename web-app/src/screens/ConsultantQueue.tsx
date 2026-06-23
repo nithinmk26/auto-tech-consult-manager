@@ -22,7 +22,7 @@ export const ConsultantQueue: React.FC<ConsultantQueueProps> = ({ onSelectJob })
         <p className="text-slate-400 mt-1.5 font-medium">Claim incoming diagnostics requests and record resolution updates.</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {/* Left Column: Claim Incoming Jobs */}
         <div className="space-y-6">
           <div>

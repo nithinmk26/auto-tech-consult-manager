@@ -1,29 +1,42 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import { LogOut, Car, ShieldAlert, Cpu } from 'lucide-react';
+import { LogOut, Car, ShieldAlert, Cpu, X } from 'lucide-react';
 
 interface SidebarProps {
   currentTab: string;
   setCurrentTab: (tab: string) => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ currentTab, setCurrentTab }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ currentTab, setCurrentTab, isOpen, onClose }) => {
   const { user, logout } = useAuth();
 
   const isDealer = user?.role === 'dealer';
 
   return (
-    <aside className="w-80 bg-slate-900 border-r border-slate-800 flex flex-col justify-between p-6 shrink-0 h-screen sticky top-0">
+    <aside className={`w-80 bg-slate-900 border-r border-slate-800 flex flex-col justify-between p-6 shrink-0 h-screen sticky top-0 transition-transform duration-300 z-50
+      fixed md:relative inset-y-0 left-0
+      ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+    `}>
       <div className="space-y-8">
         {/* Header App Title */}
-        <div className="flex items-center gap-3">
-          <div className="p-2 bg-gradient-to-tr from-orange-500 to-amber-400 rounded-lg shadow-md shadow-orange-500/10">
-            <Cpu className="w-6 h-6 text-slate-950" />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-gradient-to-tr from-orange-500 to-amber-400 rounded-lg shadow-md shadow-orange-500/10">
+              <Cpu className="w-6 h-6 text-slate-950" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold tracking-tight text-white leading-none">AutoTech</h1>
+              <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Consult Manager</span>
+            </div>
           </div>
-          <div>
-            <h1 className="text-xl font-bold tracking-tight text-white leading-none">AutoTech</h1>
-            <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Consult Manager</span>
-          </div>
+          <button 
+            onClick={onClose}
+            className="md:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg cursor-pointer"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
         {/* User Info Card */}
@@ -90,3 +103,4 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, setCurrentTab }) =
     </aside>
   );
 };
+

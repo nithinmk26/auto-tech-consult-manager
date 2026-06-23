@@ -27,7 +27,7 @@ export const DealershipDashboard: React.FC<DealershipDashboardProps> = ({ onSele
       </div>
 
       {/* Metrics Row */}
-      <div className="grid grid-cols-4 gap-6 mb-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10">
         <div className="bg-slate-900 border border-slate-800/80 rounded-xl p-5 shadow-lg relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-1.5 h-full bg-slate-700"></div>
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Total requests</p>
