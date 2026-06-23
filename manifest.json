@@ -1,0 +1,21 @@
+{
+  "short_name": "TechConsult",
+  "name": "Automobile Tech Consult Manager",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#06060c",
+  "theme_color": "#00A19B",
+  "display": "standalone",
+  "orientation": "portrait"
+}
